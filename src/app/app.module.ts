@@ -10,9 +10,10 @@ import { ErrorComponent } from './error/error.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { MoviesToWatchComponent } from './movies-to-watch/movies-to-watch.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, LoginComponent, ErrorComponent, MenuComponent, FooterComponent, MoviesToWatchComponent],
+  declarations: [AppComponent, WelcomeComponent, LoginComponent, ErrorComponent, MenuComponent, FooterComponent, MoviesToWatchComponent, LogoutComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

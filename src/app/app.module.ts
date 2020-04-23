@@ -7,14 +7,14 @@ import { AppComponent } from "./app.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { LoginComponent } from "./login/login.component";
 import { ErrorComponent } from './error/error.component';
-import { ListTodosComponent } from './list-todos/list-todos.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { MoviesToWatchComponent } from './movies-to-watch/movies-to-watch.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, LoginComponent, ErrorComponent, ListTodosComponent, MenuComponent, FooterComponent],
+  declarations: [AppComponent, WelcomeComponent, LoginComponent, ErrorComponent, MenuComponent, FooterComponent, MoviesToWatchComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

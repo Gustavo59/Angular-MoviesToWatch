@@ -1,0 +1,21 @@
+<h1> My Movies To Watch</h1>
+
+<div class="container">
+    <table class="table">
+        <caption>My Movies To Watch</caption>
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Added Date</th>
+                <th>is Watched?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let towatch of toWatch">
+                <td>{{towatch.name}}</td>
+                <td>{{towatch.addedDate | date}}</td>
+                <td>{{towatch.watched}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

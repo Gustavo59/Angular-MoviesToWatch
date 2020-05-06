@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TowatchDataService } from '../service/data/towatch-data.service';
 
-export class ToWatch {
+export class Towatch {
   constructor(
     public id: number,
     public name: string,
@@ -16,17 +17,36 @@ export class ToWatch {
   templateUrl: './movies-to-watch.component.html',
   styleUrls: ['./movies-to-watch.component.css']
 })
-export class MoviesToWatchComponent implements OnInit {
+export class MoviesTowatchComponent implements OnInit {
 
-  toWatch = [
-    new ToWatch(1, 'Breathless', false, new Date()),
-    new ToWatch(2, 'Bennys Video', false, new Date()),
-    new ToWatch(3, 'Serious Man', false, new Date())
-  ]
+  towatch: Towatch[]
 
-  constructor() { }
+  message: string
+
+  constructor(
+    private towatchService: TowatchDataService
+  ) { }
 
   ngOnInit(): void {
+    this.refreshTowatch();
+  }
+
+  refreshTowatch() {
+    this.towatchService.retrieveAllTowatch('gsbarros').subscribe(
+      response => {
+        this.towatch = response;
+      }
+    )
+  }
+
+  deleteTowatch(id) {
+    this.towatchService.deleteTowatch('gsbarros', id).subscribe(
+      response => {
+        this.message = `Delete of ToWatch ${id} Succesful!`;
+
+        this.refreshTowatch();
+      }
+    )
   }
 
 }

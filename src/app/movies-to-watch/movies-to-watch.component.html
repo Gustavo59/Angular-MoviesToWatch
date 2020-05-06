@@ -1,20 +1,23 @@
 <h1> My Movies To Watch</h1>
 
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
 <div class="container">
     <table class="table">
-        <caption>My Movies To Watch</caption>
         <thead>
             <tr>
                 <th>Movie Name</th>
                 <th>Added Date</th>
                 <th>is Watched?</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let towatch of toWatch">
-                <td>{{towatch.name}}</td>
-                <td>{{towatch.addedDate | date}}</td>
-                <td>{{towatch.watched}}</td>
+            <tr *ngFor="let watch of towatch">
+                <td>{{watch.movieName}}</td>
+                <td>{{watch.addedDate | date}}</td>
+                <td>{{watch.watched}}</td>
+                <td><button (click)="deleteTowatch(watch.id)" class="btn btn-warning">Delete</button></td>
             </tr>
         </tbody>
     </table>
